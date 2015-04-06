@@ -1,36 +1,32 @@
-<?php
+ <?php
 /*
  *  Author: Erik Mattheis | @erikmatthies
  *  Based on: html5blank.com | @html5blank
- *  Custom functions, support, custom post types and more.
  */
 
+if (version_compare ($wp_version , "4.1") < 0) {
+    die("<h1>This theme requires WordPress version 4.1 or greater");
+}
+
+/* Uncomment to limit with of images in posts to $content_width.
+
+The compression will result in a bigger file than necessary so
+only use this feature if necessary
 
 if (!isset($content_width))
 {
     $content_width = 900;
 }
+*/
 
-if (function_exists('add_theme_support'))
-{
-    add_theme_support('menus');
-    add_theme_support('post-thumbnails');
-}
+add_theme_support('menus');
+add_theme_support('post-thumbnails');
+add_theme_support('title-tag');
 
 register_sidebar(array(
-    'name' => __('Widget Area 1', 'html5blank'),
-    'description' => __('Description for this widget-area...', 'html5blank'),
+    'name' => 'Top Bar Widgets',
+    'description' => 'Typically thus area contains sign in, shopping cart and search elements.',
     'id' => 'widget-area-1',
-    'before_widget' => '<div id="%1$s" class="%2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>'
-));
-
-register_sidebar(array(
-    'name' => __('Widget Area 2', 'html5blank'),
-    'description' => __('Description for this widget-area...', 'html5blank'),
-    'id' => 'widget-area-2',
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
@@ -69,8 +65,12 @@ function gsn_header_scripts()
         wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', false, null, true);
         wp_enqueue_script('jquery' );
 
+        wp_register_script('bootstrap', 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', array(), '', 'all');
+        wp_enqueue_script('bootstrap');
+    
         wp_register_script('gsn', get_template_directory_uri() . '/js/site.min.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('gsn');
+
     }
 }
 add_action('init', 'gsn_header_scripts');
@@ -79,6 +79,12 @@ function gsn_styles()
 {
     wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize');
+
+    wp_register_style('bootstrap', 'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css', array(), '', 'all');
+    wp_enqueue_style('bootstrap');
+
+    wp_register_style('font-awesome', 'http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css', array(), '', 'all');
+    wp_enqueue_style('font-awesome');
 
     wp_register_style('wordpress', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('wordpress');
