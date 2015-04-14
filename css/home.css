@@ -1,0 +1,83 @@
+header
+{
+	top: 0px;
+    left:50%;
+    transform:translateX(-50%);
+    position: fixed;
+    background-color: grey;
+    width:100%;
+    max-height: 200px;
+    z-index: 1;
+    text-align: center;
+    display: block;
+}
+
+body
+{
+	padding-top: 205px;
+}
+
+.branding
+{
+
+	background-color: #e87370;
+
+
+}
+
+.logo
+{
+	padding: 10px;
+}
+
+
+
+/*------ Shopping List ------*/
+.btn-shopping-list
+{
+	margin-top: 52px;
+}
+
+.my-list h3
+{
+	text-align: center;
+}
+
+.my-list li
+{
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 4px;
+	text-align: center;
+}
+
+.my-list i
+{
+	display: block;
+}
+
+.my-list span
+{
+	
+}
+
+.block
+{
+	margin-bottom: 10px;
+}
+
+footer
+{
+	background-color: #d3d3d3;
+	text-align: center;
+}
+
+.social ul
+{
+	padding-left: 6px;
+}
+
+.social li
+{
+	display: inline;
+}

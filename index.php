@@ -1,19 +1,36 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="block">
+				<img src="http://placehold.it/390x175">
+			</div>
+			<div class="block">
+				<img src="http://placehold.it/390x175">
+			</div>
+			<div class="block">
+				<img src="http://placehold.it/390x175">
+			</div>
+		</div>
+		<div class="col-md-8">
+			<img src="http://placehold.it/780x525">
+		</div>
+	</div>
+</div>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
-
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 block">
+			<img src="http://placehold.it/390x175">
+		</div>
+		<div class="col-md-4 block">
+			<img src="http://placehold.it/390x175">
+		</div>
+		<div class="col-md-4 block">
+			<img src="http://placehold.it/390x175">
+		</div>
+	</div>
+</div>
 
 <?php get_footer(); ?>
